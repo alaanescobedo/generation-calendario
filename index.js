@@ -27,6 +27,8 @@ const getDayMessage = (day) => {
       return "Viernes, dia laborable";
     case 6:
       return "Sabado, dia no laborable";
+    default:
+      return "Dia no valido";
   }
 };
 const setError = (message) => ($textError.textContent = message);
