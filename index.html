@@ -7,69 +7,83 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <title>Calendario</title>
   </head>
-  <body>
-    <div class="container w-75 border border-2 rounded-3 my-5 p-3">
+  <body class="bg-dark text-white">
+    <div class="container w-75 border border-2 border-secondary rounded-3 my-5 p-4">
       <!-- Titulo -->
-      <h6>Calendario Gregoriano</h6>
-
-      <p id="textError" class="text-danger fw-bold"></p>
-
-      <!-- Fecha -->
-      <div class="container row my-2 align-items-center mx-auto gap-2">
-        <label class="col-lg-3">FECHA</label>
-        <input
-          id="inputDay"
-          class="col-lg form-control"
-          month="day"
-          placeholder="27"
-          type="text"
-          required
-        />
-        <select id="inputMonth" class="col-lg form-control" required>
-          <option value="0">Enero</option>
-          <option value="1">Febrero</option>
-          <option value="2">Marzo</option>
-          <option value="3">Abril</option>
-          <option value="4">Mayo</option>
-          <option value="5">Junio</option>
-          <option value="6">Julio</option>
-          <option value="7">Agosto</option>
-          <option value="8">Septiembre</option>
-          <option value="9">Octubre</option>
-          <option value="10">Noviembre</option>
-          <option value="11">Diciembre</option>
-        </select>
-        <input
-          id="inputYear"
-          class="col-lg form-control"
-          type="text"
-          placeholder="2022"
-          required
-        />
-        <input
-          id="inputLeap"
-          class="col-lg form-control"
-          type="text"
-          readonly
-        />
+      <div class="row">
+        <h1 class="fs-4">Calendario Gregoriano</h1>
       </div>
 
-      <!-- Calcular -->
-      <div class="text-center">
-        <button id="btnCalculate" class="btn btn-outline-primary">
-          Calcular
-        </button>
+      <div class="row">
+        <p id="textError" class="text-danger fw-bold"></p>
       </div>
 
-      <!-- Resultado -->
-      <div class="container row my-2 input-group align-items-center mx-auto gap-2">
-        <label class="col-lg-3">ES DIA LABORAL</label>
-        <input
-          id="inputWorkingDay"
-          class="col-5 form-control"
-          type="text"
-          readonly
-        />
+      <div class="row text-center text-lg-start">
+        <div class="col">
+          <!-- Fecha -->
+          <div class="row align-items-center gap-2 my-3 mx-0">
+            <label class="col-lg-3 fw-bold">FECHA</label>
+            <input
+              id="inputDay"
+              class="col-lg form-control"
+              month="day"
+              placeholder="27"
+              type="text"
+              required
+            />
+            <select id="inputMonth" class="col-lg form-control" required>
+              <option value="0">Enero</option>
+              <option value="1">Febrero</option>
+              <option value="2">Marzo</option>
+              <option value="3">Abril</option>
+              <option value="4">Mayo</option>
+              <option value="5">Junio</option>
+              <option value="6">Julio</option>
+              <option value="7">Agosto</option>
+              <option value="8">Septiembre</option>
+              <option value="9">Octubre</option>
+              <option value="10">Noviembre</option>
+              <option value="11">Diciembre</option>
+            </select>
+            <input
+              id="inputYear"
+              class="col-lg form-control"
+              type="text"
+              placeholder="2022"
+              required
+            />
+            <input
+              id="inputLeapYear"
+              class="col-lg form-control"
+              type="text"
+              readonly
+              disabled
+            />
+          </div>
+          
+          <!-- Calcular -->
+          <div class="row justify-content-center mx-0 my-3">
+            <button
+              id="btnCalculate"
+              class="btn btn-primary offset-lg-3 col-lg-9"
+              onclick="calculateDate()"
+            >
+              Calcular
+            </button>
+          </div>
+
+          <!-- Resultado -->
+          <div class="row mx-0">
+            <label class="col-lg-3 fw-bold">ES DIA LABORAL</label>
+            <input
+              id="inputWorkingDay"
+              class="col form-control"
+              type="text"
+              readonly
+              disabled
+            />
+          </div>
+        </div>
       </div>
     </div>
     <script src="./js/bootstrap.bundle.min.js"></script>
